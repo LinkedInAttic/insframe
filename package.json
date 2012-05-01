@@ -13,11 +13,11 @@
    },
    "licenses"       : [{
       "type"        : "Apache",
-      "url"         : "https://github.com/linkedin/InsFrame/blob/master/LICENSE.txt"
+      "url"         : "https://github.com/linkedin/insframe/blob/master/LICENSE.txt"
    }],
    "repository"     : {
      "type"         : "git",
-     "url"          : "git://github.com/linkedin/InsFrame.git"
+     "url"          : "git://github.com/linkedin/insframe.git"
    },
    "dependencies"   : {
       "express"     : ">=2.5.2",

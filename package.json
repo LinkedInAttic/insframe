@@ -1,0 +1,29 @@
+{
+   "name"           : "insframe",
+   "main"           : "InsFrame.js",
+   "description"    : "Central hub for distributing web apps to multiple browsers on multiple environments",
+   "author"         : "Tan Nhu <tnhu AT linkedin DOT com>",
+   "version"        : "0.0.1",
+   "keywords"       : [ "insframe", "InsFrame", "iframe", "iframe hub", "LinkedIn" ],
+   "engines"        : {
+      "node"        : ">=0.4.12"
+   },
+   "bin": {
+     "insframe"     : "./bin/insframe"
+   },
+   "licenses"       : [{
+      "type"        : "Apache",
+      "url"         : "https://github.com/linkedin/insframe/blob/master/LICENSE.txt"
+   }],
+   "repository"     : {
+     "type"         : "git",
+     "url"          : "git://github.com/linkedin/insframe.git"
+   },
+   "dependencies"   : {
+      "express"     : ">=2.5.2",
+      "socket.io"   : ">=0.8.7",
+      "ejs"         : ">=0.6.1",
+      "colors"      : ">=0.6.0",
+      "jsface"      : ">=2.1.1"
+   }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>InsFrame</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="topbar" data-scrollspy="scrollspy" >
+      <div class="topbar-inner">
+        <div class="container">
+          <a class="brand" href="/">InsFrame</a>
+          <ul class="nav secondary-nav hidden">
+            <li class="dropdown" data-dropdown="dropdown">
+              <a href="#" class="dropdown-toggle"></a>
+              <ul class="dropdown-menu">
+                <li><a class="logout" href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="console"></div>
+
+    <script>
+    config = {
+      HOST: "http://<%= hostname %>",
+      PORT: <%= port %>
+    };
+    </script>
+
+    <script src="js/jsface.js"></script>
+    <script src="js/jquery-1.7.1.js"></script>
+    <script src="js/socket.io.js"></script>
+    <script src="js/App.js"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+html, body {
+  overflow: auto;
+}
+
+#console {
+  margin-top: 50px;
+}
+
+.iframe-container {
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.iframe-container iframe {
+  border: none;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -30,7 +30,7 @@ Point some browsers to InsFrame.
 
 First clone InsFrame from out Github repository:
 
-    $ git clone git://github.com/linkedin/InsFrame.git
+    $ git clone git://github.com/linkedin/insframe.git
 
 Then run:
 

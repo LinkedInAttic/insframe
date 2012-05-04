@@ -34,7 +34,7 @@ First clone InsFrame from out Github repository:
 
 Then run:
 
-    $ cd InsFrame && node -e "new (require('./InsFrame'))()"
+    $ cd insframe && node -e "new (require('./InsFrame'))()"
 
 ## Commands
 

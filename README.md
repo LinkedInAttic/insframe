@@ -28,13 +28,13 @@ Point some browsers to InsFrame.
 
 ## Hack it locally
 
-First clone InsFrame from out Github repository:
+First clone InsFrame from our Github repository:
 
     $ git clone git://github.com/linkedin/insframe.git
 
 Then run:
 
-    $ cd InsFrame && node -e "new (require('./InsFrame'))()"
+    $ cd insframe && node -e "new (require('./InsFrame'))()"
 
 ## Commands
 

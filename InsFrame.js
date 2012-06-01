@@ -15,6 +15,10 @@
  */
 var Class = require("jsface").Class;
 
+/**
+ * InsFrame Server
+ * @author Tan Nhu, tnhu AT linkedin DOT com
+ */
 Class(function() {
   "use strict";
 

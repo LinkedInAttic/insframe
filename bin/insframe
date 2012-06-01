@@ -1,3 +1,104 @@
 #!/usr/bin/env node
 
-new (require("../InsFrame"))();
+/*
+ * Copyright (C) 2012 LinkedIn Corporation
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+var Class = require("jsface").Class,
+    path  = require("path"),
+    fs    = require("fs");
+
+/**
+ * InsFrame Console Manager
+ * @author Tan Nhu, tnhu AT linkedin DOT com
+ */
+Class({
+  $singleton: true,
+  
+  // home folder
+  home      : path.resolve(__dirname, ".."),
+  
+  /**
+   * Parse a plugin
+   * @param name plugin unique name
+   * @return object represents plugin meta information or { error: error msg } if something went wrong
+   */
+  parsePlugin: function(name) {
+    var dir  = path.join(this.home, "plugins", name),
+        json = path.join(dir, "plugin.json"),
+        meta = {},
+        main;
+        
+    if ( !path.existsSync(dir)) {
+      meta.error = "Plugin " + name + " does not exist";
+    } else if ( !path.existsSync(json)) {
+      meta.error = "Plugin meta file (" + json + ") does not exist";
+    } else {
+      try {
+        meta = JSON.parse(fs.readFileSync(json, "utf8"));
+        main = path.join(dir, meta.main);
+        
+        if ( !path.existsSync(main)) {
+          meta.error = "Plugin main file (" + main + ") does not exist";
+        } else {
+          meta.main = main;
+        }
+      } catch (e) {
+        meta.error = "Invalid JSON file: " + json;
+      }
+    }
+    
+    return meta;
+  },
+  
+  /**
+   * Load an InsFrame plugin
+   * @param name plugin name (unique plugin id)
+   * @param args arguments
+   */
+  loadPlugin: function(name, args) {
+    var meta = this.parsePlugin(name),
+        pluginPath, Plugin;
+    
+    if (meta.error) {
+      return console.log("ERROR: " + meta.error);
+    }
+    
+    // determine plugin relative path
+    pluginPath = path.join("..", meta.main.replace(this.home, "").replace(/\.js$/, ""));
+
+    // load it, then create an instance
+    Plugin = require(pluginPath);    
+    new Plugin(args);       
+  },
+  
+  /**
+   * Main entry point
+   * @param insframe insframe singleton
+   */
+  main: function(insframe) {
+	 var parse = require("arg").parse,
+	     argv  = process.argv,
+	     cmd   = argv[2],
+	     port  = parseInt(cmd),
+       args  = parse(process.argv.splice(2).join(" "));
+
+    // no command or cmd is a port (a number): run InsFrame server
+    if ( !cmd || cmd == port) {
+	   return new (require("../InsFrame"))();
+    }
+
+    insframe.loadPlugin(cmd, args);
+  }
+});

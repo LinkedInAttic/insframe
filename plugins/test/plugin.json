@@ -1,0 +1,7 @@
+{
+  "name"       : "test",
+  "description": "JavaScript unit testing plugin",
+  "main"       : "TestPlugin.js",
+  "author"     : "Tan Nhu <tnhu AT linkedin DOT com>",
+  "version"    : "0.0.1"
+}

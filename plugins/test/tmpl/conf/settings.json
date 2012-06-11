@@ -1,0 +1,39 @@
+{
+  "base.folder" : "$LEOHOME/content/static",
+  "test.folder" : "./test",
+  "report"      : "./report",
+  "data"        : "./data",
+  "port"        : 9876,
+  "timeout"     : 300000,
+  "statics"     : {
+    "/js"       : "${base.folder}/js",
+    "/lib"      : "${base.folder}/lib",
+    "/css"      : "${base.folder}/css",
+    "/data"     : "${data}"
+    "/img"      : "${base.folder}/img"
+  },
+  "load"        : {
+    "js": [
+      "/lib/yui/2.8.1/yahoo/yahoo-min.js",
+      "/lib/yui/2.8.1/dom/dom-min.js",
+      "/lib/yui/2.8.1/event/event-min.js",
+      "/lib/yui/2.8.1/datasource/datasource-min.js",
+      "/lib/yui/2.8.1_li/connection/connection-min.js",
+      "/lib/yui/2.8.1/autocomplete/autocomplete-min.js",
+      "/lib/yui/2.8.1/animation/animation-min.js",
+      "/lib/yui/2.8.1/container/container_core-min.js",
+      "/lib/yui/2.8.1/get/get-min.js",
+      "/lib/yui/2.8.1/json/json-min.js",
+      "/lib/yui/2.8.1/imageloader/imageloader-min.js",
+      "/lib/sizzle/1.0/sizzle-min.js",
+      "/lib/jquery/1.7.1/dist/jquery-1.7.1.min.js",
+      "/js/core/Define.js",
+      "/js/core/Logger.js",
+      "/js/util/Helps.js",
+      "/js/core/Controls.js",
+      "/js/core/i18n.js"
+    ],
+    "css": [
+    ]
+  }
+}

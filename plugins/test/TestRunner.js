@@ -13,9 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-(function(context, Class) {
-  var pool = [];
-  
+(function(context, Class, pool) {
   /**
    * TestRunner - test cases runner
    * @author Tan Nhu, tnhu AT linkedin DOT com
@@ -26,7 +24,7 @@
     /**
      * Add a test case into test pool
      */
-    addTestCase: function(name, clazz) {
+    add: function(name, clazz) {
       pool.push({ name: name, clazz: clazz });
     },
   
@@ -47,4 +45,4 @@
       }
     }
   });
-})(this, this.jsface && this.jsface.Class || require("jsface").Class);
+})(this, this.jsface && this.jsface.Class || require("jsface").Class, []);

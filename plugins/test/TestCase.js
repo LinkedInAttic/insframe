@@ -44,7 +44,7 @@
      * @param api test cases
      */
     constructor: function(name, api) {
-      TestRunner.addTestCase(name, Class(TestCase, api));
+      TestRunner.add(name, Class(TestCase, api));
     },
 
     /**
@@ -66,6 +66,13 @@
      * after is executed when all test cases are executed completely
      */
     after: function() {},
+    
+    /**
+     * Finish an async test
+     */
+    done: function() {
+      
+    }
 
     /**
      * main entry point

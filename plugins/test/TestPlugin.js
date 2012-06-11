@@ -30,9 +30,8 @@ Class({
   
   /**
    * Main entry point
-   * @param Plugin plugin class
    */
-  main: function(Plugin) {
-    module.exports = Plugin;
+  main: function(TestPlugin) {
+    module.exports = TestPlugin;
   }
 });

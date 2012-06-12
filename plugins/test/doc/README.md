@@ -4,17 +4,17 @@ insframe gen-test tests
 cd tests
 insframe test
 
-### What's different?
+## What's different?
 
-- No setup required in order to write or run tests
-- Environments can be customized via conf/settings.json
+- No setup required in order to write or run tests (install insframe and you're done!)
+- Environment can be customized via conf/settings.json
 - Support testing on both client (browser) and server (NodeJS, Mozilla Rhino)
 - Reports could be text (console), JSON, or JUnit-liked output
-- PhantomJS integration (no browser setup required)
+- PhantomJS integration
 - Static resources support (/js/*, /images/*, /data/*, etc.)
 - Echo service (returns everything it receives)
 
-### Async tests
+## Async tests
 
 - By default, tests are synchronous
 - Asynchronous tests are specified by API
@@ -33,14 +33,15 @@ TestCase("Control.js Unit Test", {
 });
 ```
 
-### Mock objects
+## Mock objects
 
-- HTML chunks are injected by convention: Control.js (test) => Control.html (HTML chunks)
-- JavaScript mock objects: TBD. Needed?
+- HTML chunks are injected by convention: Control.js (test) => Control.html (HTML chunks).
+- HTML chunks per test case (TestCaseName_testName) (for example: Control_test1.html): TBD, may not needed
+- JavaScript mock objects: TBD, may not needed
 
-### Function spies
+## Function spies
 
-Simple
+### Simple
 
 ``` javascript
 TestCase("Control.js Unit Test", {
@@ -55,7 +56,7 @@ TestCase("Control.js Unit Test", {
 });
 ```
 
-Advanced (AOP)
+### Advanced (AOP)
 
 ``` javascript
 TestCase("Control.js Unit Test", {
@@ -70,17 +71,17 @@ TestCase("Control.js Unit Test", {
 ```
 
 
-### Asserts
+## Asserts
 
-- QUnit-liked API: fail, raises, ok, equal, notEqual, etc.
-- isXXX APIs: isTrue, isFalse, isNumber, isString, isFunction, isClass, etc.
+- QUnit-liked APIs: fail, raises, ok, equal, notEqual
+- isXXX APIs: isTrue, isFalse, isNumber, isString, isFunction, isClass, isDate, isUndefined, isUndefinedOrNull, isNull, isEmpty, isArray, isObject, isCalled
 
-### Utils
+## Utils
 
-- Browser events simulation: Recommend to use YUI Events Simulator. Not a core thing
-- Echo server
+- Browser events simulation: It's recommended to use YUI Events Simulator (load section in conf/settings.json). Not a core thing
+- Echo service (aka $.get("/echo", data, function(data) {}))
 
-### Server side support
+## Server side support
 
 - NodeJS + Mozilla Rhino support is on plan
 - Minor additional information may need to add into tests

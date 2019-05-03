@@ -12,6 +12,8 @@ InsFrame is built on top of [NodeJS](nodejs.org), [Express](http://expressjs.com
 
 ## Installation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/linkedin/insframe.svg)](https://greenkeeper.io/)
+
     $ npm install -g insframe
 
 ## Quick Start
